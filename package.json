@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "deploy": "wrangler pages deploy ./build/client",
+    "deploy": "yarn build && wrangler pages deploy ./build/client",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
@@ -17,8 +17,10 @@
     "@remix-run/cloudflare-pages": "^2.10.3",
     "@remix-run/react": "^2.10.3",
     "isbot": "^4.1.0",
+    "next-ssr": "^1.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remix-head": "^0.0.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240512.0",
@@ -43,5 +45,10 @@
   },
   "engines": {
     "node": ">=20.0.0"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "SoraKumo <info@croud.jp>",
+  "license": "MIT",
+  "repository": "https://github.com/SoraKumo001/cloudflare-remix-ssr"
 }
